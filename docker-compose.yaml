@@ -1,28 +1,45 @@
 version: '3'
 services:
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: ./frontend
+        target: /app
+      - /app/node_modules/
+    depends_on:
+      - directus
+    ports:
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
+    networks:
+      - directus
+
   database:
     container_name: database
-    image: postgis/postgis:13-master
+    build:
+      context: ./database
+      dockerfile: Dockerfile
     volumes:
       - ./database/data/database:/var/lib/postgresql/data
     networks:
       - directus
     environment:
-      POSTGRES_USER: 'directus'
-      POSTGRES_PASSWORD: 'directus'
-      POSTGRES_DB: 'directus'
+      POSTGRES_USER: '${DB_USER}'
+      POSTGRES_PASSWORD: '${DB_PASSWORD}'
+      POSTGRES_DB: '${DB_DATABASE}'
 
   directus:
     container_name: directus
-    image: directus/directus:latest
+    build:
+      context: ./directus
+      dockerfile: Dockerfile
     ports:
-      - 8055:8055
-    volumes:
-      # By default, uploads are stored in /directus/uploads
-      # Always make sure your volumes matches the storage root when using
-      # local driver
-      - ./directus/uploads:/directus/uploads
-      - ./directus/extensions:/directus/extensions
+      - "${DIRECTUS_PORT}:${DIRECTUS_PORT}"
+#    volumes:
+#      - ./directus:/directus
     networks:
       - directus
     depends_on:
@@ -33,13 +50,13 @@ services:
 
       DB_CLIENT: 'pg'
       DB_HOST: 'database'
-      DB_PORT: '5432'
-      DB_DATABASE: 'directus'
-      DB_USER: 'directus'
-      DB_PASSWORD: 'directus'
+      DB_PORT: '${DB_PORT}'
+      DB_DATABASE: '${DB_DATABASE}'
+      DB_USER: '${DB_USER}'
+      DB_PASSWORD: '${DB_PASSWORD}'
 
-      ADMIN_EMAIL: 'admin@example.com'
-      ADMIN_PASSWORD: 'd1r3ctu5'
+      ADMIN_EMAIL: '${DIRECTUS_ADMIN_EMAIL}'
+      ADMIN_PASSWORD: '${DIRECTUS_ADMIN_PASSWORD}'
 
       # Make sure to set this in production
       # (see https://docs.directus.io/self-hosted/config-options#general)

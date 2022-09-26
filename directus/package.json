@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "directus start",
+    "create-snapshot": "directus schema snapshot ./schema.yaml --format yaml",
+    "load-snapshot": "directus schema apply --yes ./schema.yaml",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "directus": "^9.18.1"
+    "directus": "^9.18.1",
+    "wait-on": "^6.0.1"
   }
 }
