@@ -11,11 +11,13 @@ services:
         target: /app
       - /app/node_modules/
     depends_on:
-      - directus
+      - cms
     ports:
       - "${FRONTEND_PORT}:${FRONTEND_PORT}"
     networks:
-      - directus
+      - default
+    environment:
+      FRONTEND_CMS_HOST: 'http://cms:${CMS_PORT}'
 
   database:
     container_name: database
@@ -25,23 +27,21 @@ services:
     volumes:
       - ./database/data/database:/var/lib/postgresql/data
     networks:
-      - directus
+      - default
     environment:
       POSTGRES_USER: '${DB_USER}'
       POSTGRES_PASSWORD: '${DB_PASSWORD}'
       POSTGRES_DB: '${DB_DATABASE}'
 
-  directus:
-    container_name: directus
+  cms:
+    container_name: cms
     build:
-      context: ./directus
+      context: cms
       dockerfile: Dockerfile
     ports:
-      - "${DIRECTUS_PORT}:${DIRECTUS_PORT}"
-#    volumes:
-#      - ./directus:/directus
+      - "${CMS_PORT}:${CMS_PORT}"
     networks:
-      - directus
+      - default
     depends_on:
       - database
     environment:
@@ -55,12 +55,12 @@ services:
       DB_USER: '${DB_USER}'
       DB_PASSWORD: '${DB_PASSWORD}'
 
-      ADMIN_EMAIL: '${DIRECTUS_ADMIN_EMAIL}'
-      ADMIN_PASSWORD: '${DIRECTUS_ADMIN_PASSWORD}'
+      ADMIN_EMAIL: '${CMS_ADMIN_EMAIL}'
+      ADMIN_PASSWORD: '${CMS_ADMIN_PASSWORD}'
 
       # Make sure to set this in production
-      # (see https://docs.directus.io/self-hosted/config-options#general)
-      # PUBLIC_URL: 'https://directus.example.com'
+      # (see https://docs.CMS.io/self-hosted/config-options#general)
+      # PUBLIC_URL: 'https://CMS.example.com'
 
 networks:
-  directus:
+  default:
