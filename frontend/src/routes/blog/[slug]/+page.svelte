@@ -1,8 +1,10 @@
 <script>
 	/** @type {import('./$types').PageData} */
 	export let data;
+	let {foo, slug} = data;
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p> data is {JSON.stringify(data)}
+<h1>Blog post for {slug}</h1>
+<p>
+	{foo}
 </p>

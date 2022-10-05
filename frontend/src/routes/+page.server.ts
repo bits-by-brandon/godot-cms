@@ -1,13 +1,10 @@
-import DirectusProvider from '../providers/directus-provider.ts';
+import DirectusProvider from '../providers/directus-provider';
 
-/** @type {import('./$types').PageLoad} */
-export async function load({ params }) {
+export async function load() {
   const cms = new DirectusProvider();
   const posts = await cms.getPosts();
 
   return {
     posts,
-    title: 'Hello world!',
-    content: 'Welcome to our blog. Lorem ipsum dolor sit amet...'
   };
 }
