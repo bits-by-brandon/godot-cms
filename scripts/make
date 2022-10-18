@@ -1,3 +1,10 @@
 #!/bin/bash
-cp .env.example .env
+FILE=.env
+if test -f "$FILE"; then
+    echo "$FILE exists"
+else
+    echo "$FILE does not exist. Creating from example"
+  cp .env.example .env
+fi
+
 docker-compose build --no-cache

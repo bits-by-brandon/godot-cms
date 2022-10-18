@@ -8,7 +8,13 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		alias: {
+			"$components": "src/components",
+			"$stores": "src/stores",
+			"$styles": "src/styles",
+			"$assets": "src/assets",
+		}
 	}
 };
 

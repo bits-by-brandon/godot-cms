@@ -4,6 +4,6 @@ export default class EnvProvider {
     if (!value) {
       throw new Error(`Environment variable ${envName} not found.`)
     }
-    return value as T;
+    return value as unknown as T;
   }
 }
