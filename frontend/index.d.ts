@@ -9,7 +9,7 @@ interface ImportMeta {
 
 type Post = {
 	slug: string;
-	publishedAt: string;
+	publishDate: string;
 	title: string;
 	body: any;
 };

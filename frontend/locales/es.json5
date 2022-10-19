@@ -1,0 +1,21 @@
+// The localization file for all text on the site
+{
+	global: {
+		download: 'Download for free'
+	},
+	nav: {
+		features: 'features',
+		news: 'news'
+	},
+	homepage: {
+		hero: {
+			title: "The SPANISH game engine you've been waiting for",
+			body: 'Combine powerful tools with full open-source freedom. Build games your way with Godot.'
+		},
+		powerful_tools: {
+			supertext: 'Powerful tools',
+			title: 'Rethink how you build games',
+			body: 'Godot provides a huge set of common tools, so you can focus on making your game without reinventing the wheel. Godot’s innovative Node and Scene system give you both power and flexibility to create anything.'
+		}
+	}
+}

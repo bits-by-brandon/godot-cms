@@ -1,0 +1,24 @@
+:root {
+	/* named colors */
+	--red-300: #f57389;
+	--red-400: #c95f73;
+	--orange-300: #f6aa78;
+	--teal-300: #67e6bb;
+	--purple-300: #8b6ce1;
+	--cyan-300: #78e5f6;
+	--blue-100: #c4dffa;
+	--blue-200: #6bb1ee;
+	--blue-300: #359af8;
+	--blue-700: #333f67;
+	--blue-800: #101726;
+	--blue-900: #060a15;
+	--neutral-100: #fff;
+	--neutral-200: #ececec;
+	--neutral-300: #cecece;
+	--neutral-400: #949494;
+	--neutral-500: #777777;
+	--neutral-600: #3f3f3f;
+	--neutral-700: #262626;
+	--neutral-800: #0c0c0c;
+	--neutral-900: #000;
+}

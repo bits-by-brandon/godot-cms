@@ -1,35 +1,3 @@
-// import { Directus } from "@directus/sdk";
-// import EnvProvider from "$lib/util/envProvider";
-//
-// type ResponseTranslatedFields<T> = Array<{ languages_id: string } & T>;
-//
-// type ResponsePost = {
-//   id: number;
-// };
-//
-// type Schema = {
-//   Posts: ResponsePost;
-// };
-//
-// export default class DirectusProvider {
-//   client: Directus<Schema>;
-//
-//   constructor() {
-//     const CMS_HOST = EnvProvider.get('FRONTEND_CMS_HOST');
-//     this.client = new Directus(CMS_HOST);
-//   }
-//
-//   async getPosts() {
-//     return this.client.items('Posts').readByQuery();
-//   }
-//
-//   getTranslatedFieldLanguage<T extends ResponseTranslatedFields<any>>(
-//     languages: T,
-//     language: string
-//   ): T[number] {
-//     return languages.find((fields) => fields.languages_id === language);
-//   }
-// }
 import sanitizeHtml from 'sanitize-html';
 import { Directus } from '@directus/sdk';
 
@@ -100,25 +68,27 @@ export default class DirectusProvider {
 			page: options.page
 		});
 
-		return responsePosts.data as Post[];
+		if (!responsePosts.data) {
+			return [];
+		}
 
-		// return responsePosts.data.map((post) => {
-		// 	// TODO: Return fields of current page's locale
-		// 	const translations = this.getTranslatedFieldLanguage(post.translations, options.language);
-		// 	const sanitized = sanitizeHtml(translations.body, {
-		// 		allowedTags: [],
-		// 		allowedAttributes: {}
-		// 	});
-		//
-		// 	return {
-		// 		slug: post.slug,
-		// 		publishedAt: post.publish_date,
-		// 		title: translations.title,
-		// 		image: post.image && `${this.host}/assets/${post.image.id}`,
-		// 		body: translations.body,
-		// 		snippet: sanitized.slice(0, 200) + '...'
-		// 	};
-		// });
+		return responsePosts.data.map((post) => {
+			// TODO: Return fields of current page's locale
+			// const translations = this.getTranslatedFieldLanguage(post.translations, options.language);
+			const sanitized = sanitizeHtml(post.body, {
+				allowedTags: [],
+				allowedAttributes: {}
+			});
+
+			return {
+				slug: post.slug,
+				publishDate: post.publish_date,
+				title: post.title,
+				image: post.image && `${this.host}/assets/${post.image.id}`,
+				body: post.body,
+				snippet: sanitized.slice(0, 200) + '...'
+			};
+		});
 	}
 
 	getTranslatedFieldLanguage<T extends ResponseTranslatedFields<any>>(languages: T, language: string): T[number] {

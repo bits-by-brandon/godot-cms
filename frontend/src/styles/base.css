@@ -1,0 +1,30 @@
+:root {
+	--column-gap: var(--spacing-64);
+	--content-margin: var(--spacing-64);
+	--content-width: 1352px;
+	--column-count: 4;
+	--column-width: calc(
+		(var(--content-width) / var(--column-count)) -
+			(var(--column-gap) * var(--column-count) - var(--column-count))
+	);
+	--stroke-thickness: 2px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+}
+
+input,
+button {
+	font-size: inherit;
+	font-family: inherit;
+}
+
+button:focus:not(:focus-visible) {
+	outline: none;
+}

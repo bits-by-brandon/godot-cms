@@ -1,0 +1,26 @@
+// The localization file for all text on the site
+{
+	global: {
+		download: 'Download',
+		learn_more: 'Learn more'
+	},
+	nav: {
+		features: 'features',
+		news: 'news'
+	},
+	homepage: {
+		hero: {
+			title: "The game engine you've been waiting for",
+			body: 'Build games your way with Godot: a powerful, flexible, easy-to-use, open-source game engine.'
+		},
+		powerful_tools: {
+			supertext: 'A new way to build',
+			title: 'Build games with Nodes',
+			body: "Godot's node system gives you powerful functionality in a composable package. Use a sprite node to render your game art or drop in powerful pathfinding using a Navigation node."
+		},
+		open_source_callout: {
+			title: 'Godot is 100% free and fully Open Source',
+			body: 'Godot is completely free and open-source under the permissive MIT license. Your game is yours, down to the last line of engine code. No royalties, no strings attached.'
+		}
+	}
+}

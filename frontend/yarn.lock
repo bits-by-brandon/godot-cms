@@ -1182,6 +1182,11 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@fontsource/jetbrains-mono@^4.5.11":
+  version "4.5.11"
+  resolved "https://registry.yarnpkg.com/@fontsource/jetbrains-mono/-/jetbrains-mono-4.5.11.tgz#e8055c18246576fbcbeddac4f0b7f8e4b8f45050"
+  integrity sha512-IW1qgWGkjlN1O6Jf+6LWF9DpcdXhyQEXhTlzfVKrWHX+ProuOT5FcrEAj34AR+19CgAb9Sheda2slORnybBsdw==
+
 "@formatjs/ecma402-abstract@1.13.0":
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-1.13.0.tgz#df6db3cbee0182bbd2fd6217103781c802aee819"
@@ -1873,6 +1878,13 @@
   integrity sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==
   dependencies:
     "@types/node" "*"
+
+"@types/sanitize-html@^2.6.2":
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/@types/sanitize-html/-/sanitize-html-2.6.2.tgz#9c47960841b9def1e4c9dfebaaab010a3f6e97b9"
+  integrity sha512-7Lu2zMQnmHHQGKXVvCOhSziQMpa+R2hMHFefzbYoYMHeaXR0uXqNeOc3JeQQQ8/6Xa2Br/P1IQTLzV09xxAiUQ==
+  dependencies:
+    htmlparser2 "^6.0.0"
 
 "@types/sass@^1.16.0":
   version "1.43.1"

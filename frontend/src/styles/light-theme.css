@@ -1,0 +1,20 @@
+@media (prefers-color-scheme: light) {
+	:root {
+		--header-background-color: var(--neutral-900);
+		--background-color-dark: var(--blue-800);
+		--background-color-light: var(--neutral-800);
+		--section-stroke-color: var(--neutral-100);
+		--card-background-color: var(--neutral-100);
+		--card-text-color: var(--neutral-900);
+		--button-primary-background: var(--red-300);
+		--button-primary-background-hover: var(--red-400);
+		--button-secondary-background: var(--blue-300);
+		--button-tertiary-background: var(--neutral-900);
+		--link-primary-color: var(--neutral-100);
+		--link-secondary-color: var(--neutral-900);
+		--accent-color: var(--red-300);
+		--secondary-color: var(--blue-300);
+		--heading-color: var(--blue-300);
+		--text-color: var(--neutral-100);
+	}
+}
