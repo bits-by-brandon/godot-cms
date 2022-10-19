@@ -6,7 +6,7 @@
 	export let title = '';
 	export let posts = [];
 
-	$: sorted = posts.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+	$: sorted = posts.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 </script>
 
 <Carousel {supertext} {title}>

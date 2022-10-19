@@ -7,7 +7,7 @@ interface ImportMeta {
 	readonly env: ImportMetaEnv;
 }
 
-type Post = {
+type Article = {
 	slug: string;
 	publishDate: string;
 	title: string;
