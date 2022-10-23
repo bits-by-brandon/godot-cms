@@ -1,2 +1,2 @@
 #!/bin/bash
-docker exec directus directus schema snapshot ./schema.yaml --format yaml
+docker exec cms npx directus schema snapshot ./schema.yaml --format yaml --yes

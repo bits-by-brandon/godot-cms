@@ -1,2 +1,2 @@
 #!/bin/bash
-docker exec directus directus schema apply --yes ./schema.yaml
+docker exec cms npx directus schema apply --yes ./schema.yaml
