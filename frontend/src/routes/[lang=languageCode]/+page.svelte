@@ -16,8 +16,8 @@
 	import SponsorList from '$components/SponsorList.svelte';
 	import ScaledGraphic from '$components/ScaledGraphic.svelte';
 
-	/** @type {import('./$types').PageData} */
-	export let data;
+	import type { PageData } from './$types';
+	export let data: PageData;
 	const { posts } = data;
 </script>
 

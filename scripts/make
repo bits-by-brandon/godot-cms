@@ -8,3 +8,5 @@ else
 fi
 
 docker-compose build --no-cache
+
+# TODO: Load the cms/schema.yaml file, maybe upload some dummy starter data
