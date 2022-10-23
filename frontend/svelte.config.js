@@ -14,8 +14,9 @@ const config = {
 			"$stores": "src/stores",
 			"$styles": "src/styles",
 			"$assets": "src/assets",
-		}
-	}
+		},
+	},
+
 };
 
 export default config;

@@ -36,8 +36,8 @@
 		width: 100%;
 		margin-top: var(--spacing-32);
 		display: grid;
-		grid-auto-columns: minmax(0, 1fr);
-		grid-auto-flow: column;
+		grid-template-columns: repeat(4, 1fr);
+		grid-auto-flow: row;
 		grid-gap: var(--column-gap);
 	}
 </style>

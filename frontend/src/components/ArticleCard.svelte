@@ -4,8 +4,8 @@
 	export let title = '';
 	export let slug = '';
 	export let snippet = '';
-	export let publishedAt = '';
-	$: date = new Date(publishedAt).toLocaleDateString(undefined, {
+	export let publishDate = '';
+	$: date = new Date(publishDate).toLocaleDateString(undefined, {
 		month: 'short',
 		day: 'numeric',
 		year: 'numeric'

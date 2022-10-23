@@ -1,12 +1,10 @@
-<script>
+<script lang="ts">
 	import ArticleCard from './ArticleCard.svelte';
 	import Carousel from './Carousel.svelte';
 
 	export let supertext = '';
 	export let title = '';
-	export let posts = [];
-
-	$: sorted = posts.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+	export let posts: Article[] = [];
 </script>
 
 <Carousel {supertext} {title}>

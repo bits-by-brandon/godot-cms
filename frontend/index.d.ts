@@ -19,3 +19,6 @@ type Sponsor = {
 	level: string;
 	logo: string;
 };
+declare module "$locales" {
+	export function registerAll(): void;
+}
