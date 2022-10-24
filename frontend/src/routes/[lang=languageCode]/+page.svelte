@@ -17,6 +17,7 @@
 	import ScaledGraphic from '$components/ScaledGraphic.svelte';
 
 	import type { PageData } from './$types';
+  import ShowcaseCarousel from '$components/ShowcaseCarousel.svelte';
 	export let data: PageData;
 	const { posts } = data;
 </script>
@@ -50,6 +51,19 @@
 					{$t('global.learn_more')}
 				</Link>
 			</CopyBlock>
+		</Column>
+	</Row>
+</Section>
+
+<Section>
+	<Row>
+		<Column cols="1 / span 4">
+			<ShowcaseCarousel supertext="Showcase" title="See what's already been built with Godot" showcaseTitles={[
+				{title: 'Dome Keeper', image: "https://picsum.photos/200/300", developer: "John Smith", platforms: []},
+				{title: 'Brotato', image: "https://picsum.photos/200/300", developer: "John Smith", platforms: []},
+				{title: 'Kingdoms of the Dump', image: "https://picsum.photos/200/300", developer: "John Smith", platforms: []},
+				{title: 'The Garden Path', image: "https://picsum.photos/200/300", developer: "John Smith", platforms: []},
+			]} />
 		</Column>
 	</Row>
 </Section>

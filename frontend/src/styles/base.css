@@ -1,5 +1,5 @@
 :root {
-	--column-gap: var(--spacing-64);
+	--column-gap: var(--spacing-32);
 	--content-margin: var(--spacing-64);
 	--content-width: 1352px;
 	--column-count: 4;

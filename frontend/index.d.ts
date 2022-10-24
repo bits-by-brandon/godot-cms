@@ -19,6 +19,14 @@ type Sponsor = {
 	level: string;
 	logo: string;
 };
+
+type ShowcaseTitle = {
+	title: string;
+	developer: string;
+	image: string;
+	platforms: string[]
+}
+
 declare module "$locales" {
 	export function registerAll(): void;
 }

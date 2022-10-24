@@ -15,9 +15,14 @@
 	{#if title}
 		<h2>{title}</h2>
 	{/if}
-	<div class="cards">
+	<div class="items">
 		<slot />
 	</div>
+	{#if $$slots.footer}
+		<div class="footer">
+			<slot name="footer" />
+		</div>
+	{/if}
 </div>
 
 <style lang="scss">
@@ -32,12 +37,16 @@
 		margin: 0;
 	}
 
-	.cards {
+	.items {
 		width: 100%;
 		margin-top: var(--spacing-32);
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		grid-auto-flow: row;
-		grid-gap: var(--column-gap);
+		gap: var(--column-gap);
+	}
+
+	.footer {
+		margin-top: var(--spacing-24);
 	}
 </style>

@@ -2,7 +2,8 @@
 {
 	global: {
 		download: 'Download',
-		learn_more: 'Learn more'
+		learn_more: 'Learn more',
+		see_more_creations: 'See more creations',
 	},
 	nav: {
 		features: 'features',

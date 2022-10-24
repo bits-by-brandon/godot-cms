@@ -11,7 +11,7 @@
 	$: anchor = `${base}/${$locale}/${stripped_href}`;
 </script>
 
-<a class={$$props.class} class:isButton class:isLink class:isInline sveltekit:prefetch href={anchor}>
+<a class={$$props.class} class:isButton class:isLink class:isInline data-sveltekit-prefetch href={anchor}>
 	<slot />
 </a>
 
