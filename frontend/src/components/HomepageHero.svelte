@@ -2,10 +2,10 @@
 	import Container from '$components/layout/Container.svelte';
 	import Column from '$components/layout/Column.svelte';
 	import Row from '$components/layout/Row.svelte';
+	import backgroundImage from "$assets/images/tail-quest-defense-screenshot.png";
 
 	export let supertext = '';
-	export let title;
-	export let backgroundImage = '';
+	export let title = '';
 </script>
 
 <div class="hero">
@@ -73,7 +73,7 @@
 		height: 100%;
 		object-fit: cover;
 		z-index: 0;
-		opacity: 0.75;
+		opacity: 0.5;
 	}
 
 	.upper {

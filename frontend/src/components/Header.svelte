@@ -158,7 +158,7 @@
 
 	.logo {
 		margin-right: var(--spacing-64);
-		height: 38px;
+		height: 34px;
 	}
 
 	.logo img {
