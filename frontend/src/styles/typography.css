@@ -54,7 +54,6 @@ h5,
 	font-weight: bold;
 }
 
-
 p,
 .text-base {
 	font-size: var(--text-base);
@@ -82,4 +81,18 @@ pre {
 	padding: 0.5em;
 	overflow-x: auto;
 	color: var(--text-color);
+}
+
+.prose p {
+	font-family: sans-serif;
+	line-height: 1.6;
+}
+
+.prose h2 {
+	margin-top: var(--spacing-64);
+}
+
+.prose h3 {
+	margin-top: var(--spacing-48);
+	margin-bottom: var(--spacing-16);
 }

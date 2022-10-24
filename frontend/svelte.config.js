@@ -14,6 +14,7 @@ const config = {
 			"$stores": "src/stores",
 			"$styles": "src/styles",
 			"$assets": "src/assets",
+			"$providers": "src/providers",
 		},
 	},
 

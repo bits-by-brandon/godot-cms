@@ -12,7 +12,7 @@
 	});
 </script>
 
-<Link type="raw" class="article-card" href={`/news/${slug}`}>
+<Link type="raw" class="article-card" href={`/articles/${slug}`}>
 	<div class="meta">
 		{#if date}
 			<p class="date text-sm">{date}</p>
@@ -24,7 +24,7 @@
 	{/if}
 
 	{#if snippet}
-		<p>{snippet}</p>
+		<p class="snippet">{snippet}</p>
 	{/if}
 </Link>
 

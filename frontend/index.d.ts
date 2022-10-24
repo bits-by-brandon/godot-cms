@@ -11,7 +11,9 @@ type Article = {
 	slug: string;
 	publishDate: string;
 	title: string;
-	body: any;
+	body: string;
+	snippet: string;
+	image?: string;
 };
 
 type Sponsor = {

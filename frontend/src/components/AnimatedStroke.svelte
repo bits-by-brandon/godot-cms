@@ -2,7 +2,7 @@
 	import IntersectionObserver from '$components/util/IntersectionObserver.svelte';
 	export let width = 64;
 	let isIntersecting = false;
-	let strokeEl;
+	let strokeEl: HTMLElement;
 </script>
 
 <IntersectionObserver element={strokeEl} bind:isIntersecting>

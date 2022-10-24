@@ -8,7 +8,7 @@
 	// platforms: string[]
 </script>
 
-<Link type="raw" class="showcase-card" href={`/news/${slug}`}>
+<Link type="raw" class="showcase-card" href={`/showcase#${slug}`}>
 	{#if image}
 		<img class="showcase-card__image" src="{image}" alt="{title}">
 	{/if}

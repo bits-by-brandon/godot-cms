@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { tick, createEventDispatcher, afterUpdate, onMount } from 'svelte';
 
-	export let element: HTMLElement = null;
+	export let element: HTMLElement | null = null;
 
 	/**
 	 * Set to `true` to unobserve the element
@@ -19,7 +19,7 @@
 	 * Specify the containing element.
 	 * Defaults to the browser viewport.
 	 */
-	export let root: HTMLElement = null;
+	export let root: HTMLElement | null = null;
 
 	/** Margin offset of the containing element. */
 	export let rootMargin = '0px';
@@ -33,9 +33,9 @@
 	/**
 	 * Observed element metadata.
 	 */
-	export let entry: IntersectionObserverEntry = null;
+	export let entry: IntersectionObserverEntry | null = null;
 
-	let observer: IntersectionObserver = null;
+	let observer: IntersectionObserver | null = null;
 
 	const dispatch = createEventDispatcher();
 

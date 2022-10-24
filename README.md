@@ -2,7 +2,7 @@
 1. Install docker for your platform
 2. Run `scripts/make` to build the containers
 3. Run `scripts/dev` to run the development build
-4. Run `scripts/load-snapshot` to load the schema
+4. In another terminal, run `scripts/load-snapshot` to load the schema
 5. Visit http://localhost:5173/ to preview the site locally
 6. Visit http://0.0.0.0:8055/ to view the CMS locally
 
