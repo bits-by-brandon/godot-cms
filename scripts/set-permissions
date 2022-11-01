@@ -1,0 +1,16 @@
+#!/bin/bash
+
+curl --header "Content-Type: application/json" --request POST --data '[
+	{
+		"collection": "pages",
+		"action": "read",
+		"role": null,
+		"fields": ["id", "title"]
+	},
+	{
+		"collection": "pages",
+		"action": "create",
+		"role": null,
+		"fields": ["id", "translations"]
+	}
+]' $1

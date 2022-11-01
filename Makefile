@@ -1,5 +1,8 @@
 .PHONY: build dev load_schema
 ENV_FILE=".env"
+include .env
+export
+
 
 .stamps: Makefile
 	@mkdir -p $@
@@ -14,18 +17,25 @@ ENV_FILE=".env"
 # 	docker build -t example/webapp -f webapp/Dockerfile webapp
 # 	@touch $@
 
-dev: build
+dev: build docker_up
 	@echo "dev"
 
 build: frontend/node_modules build_docker docker_up load_schema 
 	@echo "build"
 
-load_schema: .stamps/load_schema.stamp
+load_schema: docker_up .stamps/load_schema.stamp
 .stamps/load_schema.stamp: .stamps cms/schema.yaml
+	@until $$(curl --output /dev/null --silent --head --fail http://localhost:${CMS_PORT}); do \
+			printf 'No cms response. Checking again in 5 seconds...\n'; \
+			sleep 5; \
+	done
+	@echo "CMS up, running schema update..."
 	docker exec cms npx directus schema apply --yes ./schema.yaml
+	docker-compose down
+	@touch $@
 
 docker_up:
-	docker-compose up --abort-on-container-exit
+	docker-compose up -d
 
 build_docker: .stamps/build_docker.stamp
 .stamps/build_docker.stamp: .stamps docker-compose.yaml
@@ -43,12 +53,3 @@ frontend/node_modules: frontend/package.json
 	@echo "frontend"
 	@cd frontend; \
 	yarn install
-
-# dev: 
-# test: build
-# 	npm test
-	
-# build: node_modules
-# 	npm build
-	
-# node_modules: package.json

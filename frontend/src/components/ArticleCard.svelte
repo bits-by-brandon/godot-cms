@@ -36,9 +36,11 @@
 		display: flex;
 		flex-direction: column;
 		transition: transform 100ms ease-in-out;
+		background: var(--blue-900);
 
 		&:hover {
 			transform: translateY(-4px);
+			text-decoration: none;
 		}
 	}
 
